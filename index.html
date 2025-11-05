@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DL Store</title>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #fff5f5;
+      margin: 0;
+      padding: 0;
+      color: #222;
+    }
+    header {
+      background-color: #b30000;
+      color: #fff;
+      text-align: center;
+      padding: 25px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+    nav {
+      background-color: #ff1a1a;
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      padding: 12px 0;
+      font-weight: bold;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+    nav a:hover {
+      color: #ffe0e0;
+    }
+    .banner {
+      text-align: center;
+      padding: 60px 20px;
+      background: linear-gradient(90deg, #ff1a1a, #b30000);
+      color: white;
+    }
+    .banner h2 {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+    }
+    .categories, .products {
+      padding: 50px 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .categories h2, .products h2 {
+      text-align: center;
+      color: #b30000;
+      font-size: 2em;
+    }
+    .category-list, .product-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+      margin-top: 25px;
+    }
+    .category, .product {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+      text-align: center;
+      padding: 25px;
+      transition: 0.3s;
+    }
+    .category:hover, .product:hover {
+      transform: scale(1.03);
+    }
+    .category img, .product img {
+      width: 100%;
+      border-radius: 10px;
+    }
+    .product button {
+      background-color: #ff1a1a;
+      color: #fff;
+      border: none;
+      padding: 12px 18px;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-top: 12px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+    .product button:hover {
+      background-color: #b30000;
+    }
+    .checkout-form {
+      max-width: 500px;
+      margin: 60px auto;
+      padding: 30px;
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+    .checkout-form h2 {
+      color: #b30000;
+      text-align: center;
+    }
+    .checkout-form input, .checkout-form textarea, .checkout-form button {
+      width: 100%;
+      margin: 12px 0;
+      padding: 12px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+    .checkout-form button {
+      background-color: #ff1a1a;
+      color: white;
+      border: none;
+      font-weight: bold;
+    }
+    footer {
+      background-color: #b30000;
+      color: white;
+      text-align: center;
+      padding: 25px;
+      margin-top: 60px;
+    }
+    footer a {
+      color: #ffd6d6;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>DL Store</h1>
+    <p>O melhor da tecnologia, moda e estilo para você</p>
+  </header>
+  <nav>
+    <a href="#inicio">Início</a>
+    <a href="#categorias">Categorias</a>
+    <a href="#produtos">Produtos</a>
+    <a href="#sobre">Sobre Nós</a>
+    <a href="#contato">Contato</a>
+  </nav>
+  <section class="banner" id="inicio">
+    <h2>Bem-vindo à DL Store</h2>
+    <p>Compre fácil, receba rápido e viva melhor!</p>
+  </section>
+  <section class="categories" id="categorias">
+    <h2>Categorias em Destaque</h2>
+    <div class="category-list">
+      <div class="category">
+        <img src="https://via.placeholder.com/250x150" alt="Eletrônicos">
+        <h3>Eletrônicos</h3>
+      </div>
+      <div class="category">
+        <img src="https://via.placeholder.com/250x150" alt="Roupas">
+        <h3>Roupas</h3>
+      </div>
+      <div class="category">
+        <img src="https://via.placeholder.com/250x150" alt="Acessórios">
+        <h3>Acessórios</h3>
+      </div>
+    </div>
+  </section>
+  <section class="products" id="produtos">
+    <h2>Produtos em Destaque</h2>
+    <div class="product-list">
+      <div class="product">
+        <img src="https://via.placeholder.com/250x150" alt="Fone Bluetooth">
+        <h3>Fone Bluetooth</h3>
+        <p>R$ 79,90</p>
+        <button>Adicionar ao carrinho</button>
+      </div>
+      <div class="product">
+        <img src="https://via.placeholder.com/250x150" alt="Camiseta Premium">
+        <h3>Camiseta Premium</h3>
+        <p>R$ 49,90</p>
+        <button>Adicionar ao carrinho</button>
+      </div>
+      <div class="product">
+        <img src="https://via.placeholder.com/250x150" alt="Relógio Digital">
+        <h3>Relógio Digital</h3>
+        <p>R$ 99,90</p>
+        <button>Adicionar ao carrinho</button>
+      </div>
+    </div>
+  </section>
+  <section class="checkout-form" id="contato">
+    <h2>Finalizar Compra</h2>
+    <input type="text" placeholder="Nome Completo" required />
+    <input type="text" placeholder="Endereço" required />
+    <input type="text" placeholder="Telefone / WhatsApp" required />
+    <textarea placeholder="Observações"></textarea>
+    <button>Confirmar Pedido</button>
+  </section>
+  <section id="sobre" class="about">
+    <div style="padding:40px; max-width:800px; margin:auto;">
+      <h2 style="color:#b30000; text-align:center;">Sobre Nós</h2>
+      <p style="text-align:center; font-size:18px;">
+        A <strong>DL Store</strong> nasceu com o propósito de oferecer produtos de qualidade e acessíveis para transformar o dia a dia das famílias brasileiras. Nosso objetivo é levar inovação, estilo e conforto para todos, com segurança e confiança em cada compra.
+      </p>
+    </div>
+  </section>
+  <footer>
+    <p>© 2025 DL Store — Todos os direitos reservados</p>
+    <p>
+      <a href="#">WhatsApp</a> |
+      <a href="#">Instagram</a> |
+      <a href="#">Política de Privacidade</a>
+    </p>
+  </footer>
+</body>
+</html>
