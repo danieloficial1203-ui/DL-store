@@ -11,6 +11,6 @@ Aqui você encontra produtos incríveis e novidades atualizadas frequentemente.
 Este site foi desenvolvido e publicado usando *GitHub Pages*.  
 Ele é mantido e atualizado diretamente pelo Daniel, dono da loja.
 
----
 
-👨‍💻 *Desenvolvido por:* Daniel Souza
+
+
