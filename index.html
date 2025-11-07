@@ -1,203 +1,180 @@
-<!DOCTYPE html>
+<!doctype html>
+
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DL Store — Tecnologia e Estilo</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>DL Store — Loja</title>
+  <meta name="description" content="DL Store — loja moderna" />
   <style>
-    /* RESET */
-    * { margin:0; padding:0; box-sizing:border-box; font-family: 'Poppins', sans-serif; scroll-behavior: smooth; }
-    body { background:#000; color:#fff; overflow-x:hidden; }
-
-    /* HEADER */
-    header {
-      text-align:center;
-      padding:50px 20px;
-      background: radial-gradient(circle, #111 40%, #000 100%);
-      border-bottom: 2px solid #ff0000;
-      animation: fadeIn 1.5s ease;
-    }
-    header img {
-      width: 160px;
-      animation: pulse 3s infinite ease-in-out;
-    }
-
-    /* NAVIGATION */
-    nav {
-      display:flex;
-      justify-content:center;
-      gap:40px;
-      background:#111;
-      padding:20px 0;
-      position:sticky;
-      top:0;
-      z-index:1000;
-      box-shadow: 0 0 15px rgba(255,0,0,0.3);
-    }
-    nav a {
-      color:#ff3333;
-      font-weight:600;
-      text-transform:uppercase;
-      text-decoration:none;
-      letter-spacing:1px;
-      transition:0.3s;
-    }
-    nav a:hover { color:#fff; transform:scale(1.1); }
-
-    /* BANNER */
-    .banner {
-      text-align:center;
-      padding:120px 20px;
-      background: linear-gradient(135deg, #b30000, #000);
-      color:#fff;
-      animation: fadeInUp 1.5s ease;
-    }
-    .banner h1 { font-size:3.5em; text-shadow:0 0 20px #ff0000; margin-bottom:15px; }
-    .banner p { font-size:1.4em; opacity:0.9; }
-
-    /* SECTIONS */
-    .section {
-      max-width:1200px;
-      margin:80px auto;
-      padding:0 20px;
-      text-align:center;
-      opacity:0;
-      transform: translateY(60px);
-      transition:1s ease;
-    }
-    .section.visible { opacity:1; transform:translateY(0); }
-    .section h2 { color:#ff0000; margin-bottom:30px; font-size:2.2em; }
-
-    /* CARDS */
-    .cards {
-      display:grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap:25px;
-    }
-    .card {
-      background:#111;
-      border:1px solid #222;
-      border-radius:12px;
-      padding:25px;
-      box-shadow:0 0 15px rgba(255,0,0,0.1);
-      transition:0.3s;
-    }
-    .card:hover { transform:scale(1.05); box-shadow:0 0 25px rgba(255,0,0,0.4); }
-    .card img { width:100%; border-radius:10px; margin-bottom:15px; }
-    .card h3 { color:#ff3333; margin-bottom:10px; }
-
-    /* FOOTER */
-    footer {
-      background:#111;
-      padding:30px;
-      text-align:center;
-      color:#ff4d4d;
-      border-top:2px solid #ff0000;
-    }
-    footer a { color:#ff4d4d; margin:0 10px; text-decoration:none; transition:0.3s; }
-    footer a:hover { color:#fff; }
-
-    /* WHATSAPP FLOAT */
-    .whatsapp-float {
-      position:fixed;
-      bottom:25px;
-      right:25px;
-      background:#25d366;
-      width:65px;
-      height:65px;
-      border-radius:50%;
-      display:flex;
-      justify-content:center;
-      align-items:center;
-      font-size:35px;
-      text-decoration:none;
-      color:#fff;
-      box-shadow:0 0 20px rgba(0,0,0,0.3);
-      transition:0.3s;
-      z-index:10000;
-      animation: fadeIn 1.5s ease;
-    }
-    .whatsapp-float:hover { transform:scale(1.1); box-shadow:0 0 25px rgba(37,211,102,0.6); }
-
-    /* ANIMATIONS */
-    @keyframes fadeIn { from{opacity:0;} to{opacity:1;} }
-    @keyframes fadeInUp { from{opacity:0; transform:translateY(40px);} to{opacity:1; transform:translateY(0);} }
-    @keyframes pulse { 0%,100%{transform:scale(1);} 50%{transform:scale(1.05);} }
-
-    /* RESPONSIVE */
-    @media(max-width:600px) { .banner h1 { font-size:2.5em; } .section h2 { font-size:1.8em; } }
+    :root{--accent:#e53935;--bg:#0f1720;--card:#0b1220;--muted:#98a0ab}
+    *{box-sizing:border-box}body{margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,Arial;background:linear-gradient(180deg,#071024 0%, #071827 60%);color:#e6eef6}
+    header{display:flex;align-items:center;justify-content:space-between;padding:18px 24px;background:linear-gradient(90deg,rgba(255,255,255,0.02),transparent);backdrop-filter:blur(6px)}
+    .brand{display:flex;gap:12px;align-items:center}
+    .logo{width:44px;height:44px;border-radius:10px;background:var(--accent);display:flex;align-items:center;justify-content:center;font-weight:700;color:white}
+    nav{display:flex;gap:18px;align-items:center}
+    .btn{background:var(--accent);border:none;padding:10px 14px;border-radius:10px;color:white;cursor:pointer;font-weight:600}
+    .ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);padding:8px 12px;border-radius:10px;color:var(--muted);cursor:pointer}
+    .container{max-width:1100px;margin:28px auto;padding:0 18px}
+    .hero{display:flex;gap:28px;align-items:center;padding:28px;background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);border-radius:14px}
+    .hero .left{flex:1}
+    .hero h1{margin:0;font-size:28px}
+    .hero p{color:var(--muted);margin-top:8px}
+    .hero .cta{margin-top:16px}
+    .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:18px;margin-top:20px}
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:14px;border-radius:12px}
+    .thumb{height:160px;border-radius:10px;background:linear-gradient(135deg,#0b1224,#12243a);display:flex;align-items:center;justify-content:center;color:var(--muted);font-weight:600;margin-bottom:12px}
+    .product-title{font-weight:700;margin:0;font-size:15px}
+    .price{margin-top:8px;font-weight:700}
+    .actions{display:flex;gap:8px;margin-top:12px}
+    footer{padding:26px 18px;text-align:center;color:var(--muted);font-size:14px;margin-top:32px}
+    /* small responsive tweaks */
+    @media(max-width:720px){.hero{flex-direction:column;align-items:flex-start}.nav-desktop{display:none}}
   </style>
 </head>
 <body>
-
-<header>
-  <img src="logo-dlstore.jpg" alt="DL Store Logo">
-</header>
-
-<nav>
-  <a href="#inicio">Início</a>
-  <a href="#produtos">Produtos</a>
-  <a href="#sobre">Sobre</a>
-  <a href="#contato">Contato</a>
-</nav>
-
-<section class="banner" id="inicio">
-  <h1>DL Store</h1>
-  <p>O futuro da tecnologia e estilo começa aqui.</p>
-</section>
-
-<section class="section" id="produtos">
-  <h2>Produtos em Destaque</h2>
-  <div class="cards">
-    <div class="card">
-      <img src="https://via.placeholder.com/250x150" alt="Fone Bluetooth">
-      <h3>Fone Bluetooth</h3>
-      <p>Som potente e bateria duradoura.</p>
+  <header>
+    <div class="brand">
+      <div class="logo">DL</div>
+      <div>
+        <div style="font-weight:700">DL Store</div>
+        <div style="font-size:12px;color:var(--muted)">Tecnologia & Acessórios</div>
+      </div>
     </div>
-    <div class="card">
-      <img src="https://via.placeholder.com/250x150" alt="Relógio Digital">
-      <h3>Relógio Digital</h3>
-      <p>Estilo e tecnologia no seu pulso.</p>
+    <nav class="nav-desktop">
+      <button class="ghost">Categorias</button>
+      <button class="ghost">Ofertas</button>
+      <button class="ghost">Contato</button>
+      <button id="cartBtn" class="btn">Carrinho (0)</button>
+    </nav>
+    <div class="nav-mobile">
+      <button id="mobileMenuToggle" class="ghost">Menu</button>
     </div>
-    <div class="card">
-      <img src="https://via.placeholder.com/250x150" alt="Camiseta Premium">
-      <h3>Camiseta Premium</h3>
-      <p>Conforto e qualidade em cada detalhe.</p>
-    </div>
+  </header>  <main class="container">
+    <section class="hero">
+      <div class="left">
+        <h1>Bem-vindo à DL Store</h1>
+        <p>Loja moderna, visual limpo e checkout simples. Produtos selecionados com carinho — prontos pra entrega.</p>
+        <div class="cta">
+          <button class="btn" onclick="scrollToProducts()">Ver Produtos</button>
+          <button class="ghost" style="margin-left:8px">Personalizar logo</button>
+        </div>
+      </div>
+      <div class="right" style="min-width:240px">
+        <div style="background:linear-gradient(135deg,#071b2b,#06304a);padding:14px;border-radius:12px">
+          <div style="font-size:13px;color:var(--muted)">Promoção</div>
+          <div style="font-size:18px;font-weight:700;margin-top:6px">Frete grátis nas compras acima de R$199</div>
+        </div>
+      </div>
+    </section><section id="products">
+  <div style="display:flex;align-items:center;justify-content:space-between;margin-top:10px">
+    <h2 style="margin:0">Produtos</h2>
+    <div style="color:var(--muted);font-size:14px">Mostrando 6 itens</div>
+  </div>
+
+  <div class="grid" id="productGrid">
+    <!-- Produto template inserido via JS para facilitar edição -->
   </div>
 </section>
 
-<section class="section" id="sobre">
-  <h2>Sobre Nós</h2>
-  <p>A <strong>DL Store</strong> nasceu com a missão de unir tecnologia, moda e inovação em um só lugar. Cada produto reflete qualidade e estilo para quem busca o melhor.</p>
-</section>
-
-<section class="section" id="contato">
-  <h2>Contato</h2>
-  <p>Fale com a gente diretamente no WhatsApp!</p>
-  <p><a href="https://wa.me/5574999489067" style="color:#25d366;">👉 Clique aqui para conversar</a></p>
-</section>
-
 <footer>
-  <p>© 2025 DL Store — Inovação, Estilo e Tecnologia</p>
+  © DL Store — Feito com ❤ — Personalize como quiser
 </footer>
 
-<a href="https://wa.me/5574999489067" target="_blank" class="whatsapp-float" title="Fale conosco no WhatsApp">💬</a>
+  </main>  <!-- Modal Carrinho simples -->  <div id="cartModal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.6);align-items:center;justify-content:center">
+    <div style="background:#071827;border-radius:12px;padding:18px;max-width:520px;width:92%">
+      <h3 style="margin-top:0">Seu Carrinho</h3>
+      <div id="cartList" style="max-height:320px;overflow:auto;color:var(--muted)"></div>
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-top:12px">
+        <div id="cartTotal" style="font-weight:700">Total: R$0,00</div>
+        <div>
+          <button onclick="closeCart()" class="ghost">Continuar comprando</button>
+          <button class="btn" style="margin-left:8px">Finalizar</button>
+        </div>
+      </div>
+    </div>
+  </div>  <script>
+    // Dados de exemplo — substitua pelos seus produtos reais
+    const products = [
+      {id:1,name:'Fone Bluetooth X100',price:129.90,desc:'Som cristalino, bateria 12h'},
+      {id:2,name:'Carregador Turbo 30W',price:59.90,desc:'Carga rápida USB-C'},
+      {id:3,name:'Capa Silicone Galaxy',price:39.90,desc:'Proteção e estilo'},
+      {id:4,name:'Power Bank 10.000mAh',price:89.90,desc:'Compacto e potente'},
+      {id:5,name:'Suporte para Celular',price:29.90,desc:'Ajustável, ideal para mesa'},
+      {id:6,name:'Cabo USB-C 1m',price:19.90,desc:'Reforçado e durável'}
+    ];
 
-<script>
-  // Mostrar seções ao rolar
-  const sections = document.querySelectorAll('.section');
-  const reveal = () => {
-    const trigger = window.innerHeight / 1.2;
-    sections.forEach(sec => {
-      if(sec.getBoundingClientRect().top < trigger) sec.classList.add('visible');
-    });
-  };
-  window.addEventListener('scroll', reveal);
-  reveal();
-</script>
+    const cart = [];
+    function formatBRL(v){return v.toLocaleString('pt-BR',{style:'currency',currency:'BRL'})}
 
-</body>
+    function renderProducts(){
+      const grid = document.getElementById('productGrid');
+      grid.innerHTML='';
+      products.forEach(p=>{
+        const card = document.createElement('div');card.className='card';
+        card.innerHTML = `
+          <div class="thumb">Imagem</div>
+          <div class="meta">
+            <div class="product-title">${p.name}</div>
+            <div style="color:var(--muted);font-size:13px">${p.desc}</div>
+            <div class="price">${formatBRL(p.price)}</div>
+            <div class="actions">
+              <button class="ghost" onclick="quickView(${p.id})">Ver</button>
+              <button class="btn" onclick="addToCart(${p.id})">Adicionar</button>
+            </div>
+          </div>
+        `;
+        grid.appendChild(card);
+      })
+    }
+
+    function quickView(id){
+      const p = products.find(x=>x.id===id);
+      alert(p.name + '\n\n' + p.desc + '\n' + formatBRL(p.price));
+    }
+
+    function addToCart(id){
+      const p = products.find(x=>x.id===id);
+      const item = cart.find(x=>x.id===id);
+      if(item) item.qty++;
+      else cart.push({id:p.id,name:p.name,price:p.price,qty:1});
+      updateCartUI();
+    }
+
+    function updateCartUI(){
+      document.getElementById('cartBtn').innerText = Carrinho (${cart.reduce((s,i)=>s+i.qty,0)});
+      const list = document.getElementById('cartList');
+      list.innerHTML = '';
+      let total = 0;
+      cart.forEach(i=>{
+        total += i.price * i.qty;
+        const row = document.createElement('div');
+        row.style.padding='8px 0';
+        row.style.borderBottom='1px solid rgba(255,255,255,0.03)';
+        row.innerHTML = ${i.name} — ${i.qty} x ${formatBRL(i.price)} <span style="float:right">${formatBRL(i.price*i.qty)}</span>;
+        list.appendChild(row);
+      });
+      document.getElementById('cartTotal').innerText = 'Total: ' + formatBRL(total);
+    }
+
+    function openCart(){
+      document.getElementById('cartModal').style.display='flex';
+      updateCartUI();
+    }
+    function closeCart(){document.getElementById('cartModal').style.display='none'}
+
+    document.getElementById('cartBtn').addEventListener('click',openCart);
+    document.getElementById('mobileMenuToggle').addEventListener('click',()=>alert('Abra o menu mobile — implementar conforme desejar'));
+
+    function scrollToProducts(){document.getElementById('products').scrollIntoView({behavior:'smooth'})}
+
+    // inicializa
+    renderProducts();
+  </script>  <!--
+    Como usar:
+    - Copie todo esse arquivo como index.html e poste no seu servidor / GitHub Pages.
+    - Para trocar produtos, edite o array products no script.
+    - Se quiser integrar com backend (PagSeguro, MercadoPago, etc.) substitua a função addToCart/checkout.
+    - Precisa de logo real? me manda as preferências que eu altero.
+  --></body>
 </html>
-
