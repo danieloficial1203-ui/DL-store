@@ -1,272 +1,203 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>DL Store — Inovação e Estilo</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DL Store — Tecnologia e Estilo</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Poppins', sans-serif;
-      scroll-behavior: smooth;
-    }
-
-    body {
-      background-color: #000;
-      color: #fff;
-      overflow-x: hidden;
-    }
+    /* RESET */
+    * { margin:0; padding:0; box-sizing:border-box; font-family: 'Poppins', sans-serif; scroll-behavior: smooth; }
+    body { background:#000; color:#fff; overflow-x:hidden; }
 
     /* HEADER */
     header {
-      text-align: center;
-      padding: 60px 20px;
+      text-align:center;
+      padding:50px 20px;
       background: radial-gradient(circle, #111 40%, #000 100%);
-      border-bottom: 2px solid red;
-      animation: fadeIn 2s ease;
+      border-bottom: 2px solid #ff0000;
+      animation: fadeIn 1.5s ease;
     }
-
     header img {
       width: 160px;
       animation: pulse 3s infinite ease-in-out;
     }
 
-    /* NAV */
+    /* NAVIGATION */
     nav {
-      background: #111;
-      display: flex;
-      justify-content: center;
-      gap: 40px;
-      padding: 20px 0;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
+      display:flex;
+      justify-content:center;
+      gap:40px;
+      background:#111;
+      padding:20px 0;
+      position:sticky;
+      top:0;
+      z-index:1000;
       box-shadow: 0 0 15px rgba(255,0,0,0.3);
     }
-
     nav a {
-      color: #ff3333;
-      font-weight: bold;
-      text-transform: uppercase;
-      text-decoration: none;
-      letter-spacing: 1px;
-      transition: 0.3s;
+      color:#ff3333;
+      font-weight:600;
+      text-transform:uppercase;
+      text-decoration:none;
+      letter-spacing:1px;
+      transition:0.3s;
     }
-
-    nav a:hover {
-      color: white;
-      transform: scale(1.1);
-    }
+    nav a:hover { color:#fff; transform:scale(1.1); }
 
     /* BANNER */
     .banner {
-      text-align: center;
-      padding: 100px 20px;
+      text-align:center;
+      padding:120px 20px;
       background: linear-gradient(135deg, #b30000, #000);
-      color: white;
-      animation: fadeInUp 2s ease;
+      color:#fff;
+      animation: fadeInUp 1.5s ease;
     }
+    .banner h1 { font-size:3.5em; text-shadow:0 0 20px #ff0000; margin-bottom:15px; }
+    .banner p { font-size:1.4em; opacity:0.9; }
 
-    .banner h2 {
-      font-size: 3em;
-      letter-spacing: 2px;
-      margin-bottom: 15px;
-      text-shadow: 0 0 20px red;
-    }
-
-    .banner p {
-      font-size: 1.3em;
-      opacity: 0.9;
-    }
-
-    /* SEÇÕES */
+    /* SECTIONS */
     .section {
-      opacity: 0;
+      max-width:1200px;
+      margin:80px auto;
+      padding:0 20px;
+      text-align:center;
+      opacity:0;
       transform: translateY(60px);
-      transition: 1s ease;
-      text-align: center;
-      padding: 80px 20px;
-      max-width: 1000px;
-      margin: auto;
+      transition:1s ease;
     }
+    .section.visible { opacity:1; transform:translateY(0); }
+    .section h2 { color:#ff0000; margin-bottom:30px; font-size:2.2em; }
 
-    .section.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .section h2 {
-      color: red;
-      margin-bottom: 30px;
-      font-size: 2em;
-    }
-
+    /* CARDS */
     .cards {
-      display: grid;
+      display:grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 25px;
+      gap:25px;
     }
-
     .card {
-      background: #111;
-      border: 1px solid #222;
-      border-radius: 12px;
-      padding: 25px;
-      box-shadow: 0 0 15px rgba(255,0,0,0.1);
-      transition: 0.3s;
+      background:#111;
+      border:1px solid #222;
+      border-radius:12px;
+      padding:25px;
+      box-shadow:0 0 15px rgba(255,0,0,0.1);
+      transition:0.3s;
     }
-
-    .card:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 25px rgba(255,0,0,0.4);
-    }
-
-    .card img {
-      width: 100%;
-      border-radius: 10px;
-      margin-bottom: 15px;
-    }
-
-    .card h3 {
-      color: #ff3333;
-      margin-bottom: 10px;
-    }
+    .card:hover { transform:scale(1.05); box-shadow:0 0 25px rgba(255,0,0,0.4); }
+    .card img { width:100%; border-radius:10px; margin-bottom:15px; }
+    .card h3 { color:#ff3333; margin-bottom:10px; }
 
     /* FOOTER */
     footer {
-      background-color: #111;
-      text-align: center;
-      padding: 30px;
-      color: #ff4d4d;
-      border-top: 2px solid red;
+      background:#111;
+      padding:30px;
+      text-align:center;
+      color:#ff4d4d;
+      border-top:2px solid #ff0000;
     }
+    footer a { color:#ff4d4d; margin:0 10px; text-decoration:none; transition:0.3s; }
+    footer a:hover { color:#fff; }
 
-    footer a {
-      color: #ff4d4d;
-      margin: 0 10px;
-      text-decoration: none;
-      transition: 0.3s;
-    }
-
-    footer a:hover {
-      color: white;
-    }
-
-    /* BOTÃO WHATSAPP */
+    /* WHATSAPP FLOAT */
     .whatsapp-float {
-      position: fixed;
-      bottom: 25px;
-      right: 25px;
-      background-color: #25d366;
-      color: white;
-      border-radius: 50%;
-      width: 65px;
-      height: 65px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-size: 35px;
-      box-shadow: 0 0 20px rgba(0,0,0,0.3);
-      text-decoration: none;
-      transition: 0.3s ease;
-      z-index: 10000;
-      animation: fadeIn 2s ease;
+      position:fixed;
+      bottom:25px;
+      right:25px;
+      background:#25d366;
+      width:65px;
+      height:65px;
+      border-radius:50%;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      font-size:35px;
+      text-decoration:none;
+      color:#fff;
+      box-shadow:0 0 20px rgba(0,0,0,0.3);
+      transition:0.3s;
+      z-index:10000;
+      animation: fadeIn 1.5s ease;
     }
+    .whatsapp-float:hover { transform:scale(1.1); box-shadow:0 0 25px rgba(37,211,102,0.6); }
 
-    .whatsapp-float:hover {
-      transform: scale(1.1);
-      box-shadow: 0 0 25px rgba(37,211,102,0.6);
-    }
+    /* ANIMATIONS */
+    @keyframes fadeIn { from{opacity:0;} to{opacity:1;} }
+    @keyframes fadeInUp { from{opacity:0; transform:translateY(40px);} to{opacity:1; transform:translateY(0);} }
+    @keyframes pulse { 0%,100%{transform:scale(1);} 50%{transform:scale(1.05);} }
 
-    /* ANIMAÇÕES */
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(40px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes pulse {
-      0%, 100% { transform: scale(1); }
-      50% { transform: scale(1.05); }
-    }
+    /* RESPONSIVE */
+    @media(max-width:600px) { .banner h1 { font-size:2.5em; } .section h2 { font-size:1.8em; } }
   </style>
 </head>
 <body>
-  <header>
-    <img src="logo-dlstore.jpg.jpg" alt="Logo DL Store">
-  </header>
 
-  <nav>
-    <a href="#inicio">Início</a>
-    <a href="#produtos">Produtos</a>
-    <a href="#sobre">Sobre</a>
-    <a href="#contato">Contato</a>
-  </nav>
+<header>
+  <img src="logo-dlstore.jpg" alt="DL Store Logo">
+</header>
 
-  <section class="banner" id="inicio">
-    <h2>DL Store</h2>
-    <p>O futuro da tecnologia e estilo começa aqui.</p>
-  </section>
+<nav>
+  <a href="#inicio">Início</a>
+  <a href="#produtos">Produtos</a>
+  <a href="#sobre">Sobre</a>
+  <a href="#contato">Contato</a>
+</nav>
 
-  <section class="section" id="produtos">
-    <h2>Produtos em Destaque</h2>
-    <div class="cards">
-      <div class="card">
-        <img src="https://via.placeholder.com/250x150" alt="Produto">
-        <h3>Fone Bluetooth</h3>
-        <p>Som potente e bateria duradoura.</p>
-      </div>
-      <div class="card">
-        <img src="https://via.placeholder.com/250x150" alt="Produto">
-        <h3>Relógio Digital</h3>
-        <p>Estilo e tecnologia no seu pulso.</p>
-      </div>
-      <div class="card">
-        <img src="https://via.placeholder.com/250x150" alt="Produto">
-        <h3>Camiseta Premium</h3>
-        <p>Conforto e qualidade em cada detalhe.</p>
-      </div>
+<section class="banner" id="inicio">
+  <h1>DL Store</h1>
+  <p>O futuro da tecnologia e estilo começa aqui.</p>
+</section>
+
+<section class="section" id="produtos">
+  <h2>Produtos em Destaque</h2>
+  <div class="cards">
+    <div class="card">
+      <img src="https://via.placeholder.com/250x150" alt="Fone Bluetooth">
+      <h3>Fone Bluetooth</h3>
+      <p>Som potente e bateria duradoura.</p>
     </div>
-  </section>
+    <div class="card">
+      <img src="https://via.placeholder.com/250x150" alt="Relógio Digital">
+      <h3>Relógio Digital</h3>
+      <p>Estilo e tecnologia no seu pulso.</p>
+    </div>
+    <div class="card">
+      <img src="https://via.placeholder.com/250x150" alt="Camiseta Premium">
+      <h3>Camiseta Premium</h3>
+      <p>Conforto e qualidade em cada detalhe.</p>
+    </div>
+  </div>
+</section>
 
-  <section class="section" id="sobre">
-    <h2>Sobre Nós</h2>
-    <p>A <strong>DL Store</strong> nasceu com a missão de unir tecnologia, moda e inovação em um só lugar. Aqui, cada produto reflete qualidade e estilo para quem busca o melhor.</p>
-  </section>
+<section class="section" id="sobre">
+  <h2>Sobre Nós</h2>
+  <p>A <strong>DL Store</strong> nasceu com a missão de unir tecnologia, moda e inovação em um só lugar. Cada produto reflete qualidade e estilo para quem busca o melhor.</p>
+</section>
 
-  <section class="section" id="contato">
-    <h2>Contato</h2>
-    <p>Fale com a gente diretamente no WhatsApp!</p>
-    <p><a href="https://wa.me/5574999489067" style="color:#25d366;">👉 Clique aqui para conversar</a></p>
-  </section>
+<section class="section" id="contato">
+  <h2>Contato</h2>
+  <p>Fale com a gente diretamente no WhatsApp!</p>
+  <p><a href="https://wa.me/5574999489067" style="color:#25d366;">👉 Clique aqui para conversar</a></p>
+</section>
 
-  <footer>
-    <p>© 2025 DL Store — Inovação, Estilo e Tecnologia</p>
-  </footer>
+<footer>
+  <p>© 2025 DL Store — Inovação, Estilo e Tecnologia</p>
+</footer>
 
-  <!-- BOTÃO FLUTUANTE DO WHATSAPP -->
-  <a href="https://wa.me/5574999489067" class="whatsapp-float" target="_blank" title="Fale conosco no WhatsApp">
-    💬
-  </a>
+<a href="https://wa.me/5574999489067" target="_blank" class="whatsapp-float" title="Fale conosco no WhatsApp">💬</a>
 
-  <script>
-    // Animação de aparição ao rolar
-    const sections = document.querySelectorAll('.section');
-    const showOnScroll = () => {
-      const trigger = window.innerHeight / 1.2;
-      sections.forEach(sec => {
-        const top = sec.getBoundingClientRect().top;
-        if (top < trigger) sec.classList.add('visible');
-      });
-    };
-    window.addEventListener('scroll', showOnScroll);
-    showOnScroll();
-  </script>
+<script>
+  // Mostrar seções ao rolar
+  const sections = document.querySelectorAll('.section');
+  const reveal = () => {
+    const trigger = window.innerHeight / 1.2;
+    sections.forEach(sec => {
+      if(sec.getBoundingClientRect().top < trigger) sec.classList.add('visible');
+    });
+  };
+  window.addEventListener('scroll', reveal);
+  reveal();
+</script>
+
 </body>
 </html>
+
