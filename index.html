@@ -7,83 +7,101 @@
   <style>
     body {
       font-family: 'Poppins', sans-serif;
-      background-color: #fff5f5;
+      background-color: #000;
+      color: #fff;
       margin: 0;
       padding: 0;
-      color: #222;
     }
-header {
-  background-color: #b30000;
-  padding: 0;
-  margin: 0;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-}
 
-header .logo-banner {
-  width: 100%;
-  height: auto;
-  display: block;
-}
+    header {
+      background-color: #000;
+      text-align: center;
+      padding: 30px 0 10px;
+    }
+
+    header img {
+      width: 180px;
+      height: auto;
+    }
 
     nav {
-      background-color: #ff1a1a;
+      background-color: #b30000;
       display: flex;
       justify-content: center;
       gap: 25px;
-      padding: 12px 0;
+      padding: 14px 0;
       font-weight: bold;
     }
+
     nav a {
       color: white;
       text-decoration: none;
       transition: 0.3s;
     }
+
     nav a:hover {
-      color: #ffe0e0;
+      color: #ff4d4d;
     }
+
     .banner {
       text-align: center;
-      padding: 60px 20px;
-      background: linear-gradient(90deg, #ff1a1a, #b30000);
-      color: white;
+      background: linear-gradient(90deg, #000, #b30000);
+      padding: 80px 20px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.7);
     }
+
     .banner h2 {
-      font-size: 2.5em;
-      margin-bottom: 10px;
+      font-size: 2.8em;
+      color: #fff;
+      text-shadow: 2px 2px 8px #b30000;
+      margin: 0;
     }
+
+    .banner p {
+      color: #ccc;
+      font-size: 1.2em;
+      margin-top: 10px;
+    }
+
     .categories, .products {
       padding: 50px 20px;
       max-width: 1200px;
       margin: 0 auto;
     }
+
     .categories h2, .products h2 {
       text-align: center;
-      color: #b30000;
+      color: #ff1a1a;
       font-size: 2em;
+      margin-bottom: 30px;
     }
+
     .category-list, .product-list {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 25px;
-      margin-top: 25px;
     }
+
     .category, .product {
-      background: white;
+      background: #111;
       border-radius: 12px;
-      box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+      box-shadow: 0 3px 10px rgba(255, 0, 0, 0.3);
       text-align: center;
       padding: 25px;
       transition: 0.3s;
     }
+
     .category:hover, .product:hover {
-      transform: scale(1.03);
+      transform: scale(1.05);
     }
+
     .category img, .product img {
       width: 100%;
       border-radius: 10px;
     }
+
     .product button {
-      background-color: #ff1a1a;
+      background-color: #b30000;
       color: #fff;
       border: none;
       padding: 12px 18px;
@@ -93,63 +111,49 @@ header .logo-banner {
       font-weight: bold;
       transition: 0.3s;
     }
+
     .product button:hover {
-      background-color: #b30000;
-    }
-    .checkout-form {
-      max-width: 500px;
-      margin: 60px auto;
-      padding: 30px;
-      background-color: white;
-      border-radius: 10px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-    }
-    .checkout-form h2 {
-      color: #b30000;
-      text-align: center;
-    }
-    .checkout-form input, .checkout-form textarea, .checkout-form button {
-      width: 100%;
-      margin: 12px 0;
-      padding: 12px;
-      border-radius: 6px;
-      border: 1px solid #ccc;
-    }
-    .checkout-form button {
       background-color: #ff1a1a;
-      color: white;
-      border: none;
-      font-weight: bold;
     }
+
     footer {
-      background-color: #b30000;
-      color: white;
+      background-color: #000;
+      color: #aaa;
       text-align: center;
       padding: 25px;
       margin-top: 60px;
+      border-top: 2px solid #b30000;
     }
+
     footer a {
-      color: #ffd6d6;
+      color: #ff4d4d;
       text-decoration: none;
       margin: 0 10px;
+    }
+
+    footer a:hover {
+      color: white;
     }
   </style>
 </head>
 <body>
-<header>
-  <img src="logo-dlstore.jpg.jpg" alt="Logo DL Store" class="logo-banner">
-</header>
- <nav>
+  <header>
+    <img src="logo-dlstore.jpg.jpg" alt="Logo DL Store">
+  </header>
+
+  <nav>
     <a href="#inicio">Início</a>
     <a href="#categorias">Categorias</a>
     <a href="#produtos">Produtos</a>
     <a href="#sobre">Sobre Nós</a>
     <a href="#contato">Contato</a>
   </nav>
+
   <section class="banner" id="inicio">
-    <h2>Bem-vindo à DL Store</h2>
-    <p>Compre fácil, receba rápido e viva melhor!</p>
+    <h2>DL Store — Estilo e Inovação</h2>
+    <p>O melhor da moda e tecnologia em um só lugar</p>
   </section>
+
   <section class="categories" id="categorias">
     <h2>Categorias em Destaque</h2>
     <div class="category-list">
@@ -167,6 +171,7 @@ header .logo-banner {
       </div>
     </div>
   </section>
+
   <section class="products" id="produtos">
     <h2>Produtos em Destaque</h2>
     <div class="product-list">
@@ -190,22 +195,7 @@ header .logo-banner {
       </div>
     </div>
   </section>
-  <section class="checkout-form" id="contato">
-    <h2>Finalizar Compra</h2>
-    <input type="text" placeholder="Nome Completo" required />
-    <input type="text" placeholder="Endereço" required />
-    <input type="text" placeholder="Telefone / WhatsApp" required />
-    <textarea placeholder="Observações"></textarea>
-    <button>Confirmar Pedido</button>
-  </section>
-  <section id="sobre" class="about">
-    <div style="padding:40px; max-width:800px; margin:auto;">
-      <h2 style="color:#b30000; text-align:center;">Sobre Nós</h2>
-      <p style="text-align:center; font-size:18px;">
-        A <strong>DL Store</strong> nasceu com o propósito de oferecer produtos de qualidade e acessíveis para transformar o dia a dia das famílias brasileiras. Nosso objetivo é levar inovação, estilo e conforto para todos, com segurança e confiança em cada compra.
-      </p>
-    </div>
-  </section>
+
   <footer>
     <p>© 2025 DL Store — Todos os direitos reservados</p>
     <p>
