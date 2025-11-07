@@ -3,136 +3,197 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>DL Store</title>
+  <title>DL Store — Inovação e Estilo</title>
   <style>
-    body {
-      font-family: 'Poppins', sans-serif;
-      background-color: #000;
-      color: #fff;
+    * {
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+      scroll-behavior: smooth;
     }
 
-    header {
+    body {
       background-color: #000;
+      color: #fff;
+      overflow-x: hidden;
+    }
+
+    /* HEADER */
+    header {
       text-align: center;
-      padding: 30px 0 10px;
+      padding: 60px 20px;
+      background: radial-gradient(circle, #111 40%, #000 100%);
+      border-bottom: 2px solid red;
+      animation: fadeIn 2s ease;
     }
 
     header img {
-      width: 180px;
-      height: auto;
+      width: 160px;
+      animation: pulse 3s infinite ease-in-out;
     }
 
+    /* NAV */
     nav {
-      background-color: #b30000;
+      background: #111;
       display: flex;
       justify-content: center;
-      gap: 25px;
-      padding: 14px 0;
-      font-weight: bold;
+      gap: 40px;
+      padding: 20px 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 0 15px rgba(255,0,0,0.3);
     }
 
     nav a {
-      color: white;
+      color: #ff3333;
+      font-weight: bold;
+      text-transform: uppercase;
       text-decoration: none;
+      letter-spacing: 1px;
       transition: 0.3s;
     }
 
     nav a:hover {
-      color: #ff4d4d;
+      color: white;
+      transform: scale(1.1);
     }
 
+    /* BANNER */
     .banner {
       text-align: center;
-      background: linear-gradient(90deg, #000, #b30000);
-      padding: 80px 20px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.7);
+      padding: 100px 20px;
+      background: linear-gradient(135deg, #b30000, #000);
+      color: white;
+      animation: fadeInUp 2s ease;
     }
 
     .banner h2 {
-      font-size: 2.8em;
-      color: #fff;
-      text-shadow: 2px 2px 8px #b30000;
-      margin: 0;
+      font-size: 3em;
+      letter-spacing: 2px;
+      margin-bottom: 15px;
+      text-shadow: 0 0 20px red;
     }
 
     .banner p {
-      color: #ccc;
-      font-size: 1.2em;
-      margin-top: 10px;
+      font-size: 1.3em;
+      opacity: 0.9;
     }
 
-    .categories, .products {
-      padding: 50px 20px;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    .categories h2, .products h2 {
+    /* SEÇÕES */
+    .section {
+      opacity: 0;
+      transform: translateY(60px);
+      transition: 1s ease;
       text-align: center;
-      color: #ff1a1a;
-      font-size: 2em;
-      margin-bottom: 30px;
+      padding: 80px 20px;
+      max-width: 1000px;
+      margin: auto;
     }
 
-    .category-list, .product-list {
+    .section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .section h2 {
+      color: red;
+      margin-bottom: 30px;
+      font-size: 2em;
+    }
+
+    .cards {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 25px;
     }
 
-    .category, .product {
+    .card {
       background: #111;
+      border: 1px solid #222;
       border-radius: 12px;
-      box-shadow: 0 3px 10px rgba(255, 0, 0, 0.3);
-      text-align: center;
       padding: 25px;
+      box-shadow: 0 0 15px rgba(255,0,0,0.1);
       transition: 0.3s;
     }
 
-    .category:hover, .product:hover {
+    .card:hover {
       transform: scale(1.05);
+      box-shadow: 0 0 25px rgba(255,0,0,0.4);
     }
 
-    .category img, .product img {
+    .card img {
       width: 100%;
       border-radius: 10px;
+      margin-bottom: 15px;
     }
 
-    .product button {
-      background-color: #b30000;
-      color: #fff;
-      border: none;
-      padding: 12px 18px;
-      border-radius: 6px;
-      cursor: pointer;
-      margin-top: 12px;
-      font-weight: bold;
-      transition: 0.3s;
+    .card h3 {
+      color: #ff3333;
+      margin-bottom: 10px;
     }
 
-    .product button:hover {
-      background-color: #ff1a1a;
-    }
-
+    /* FOOTER */
     footer {
-      background-color: #000;
-      color: #aaa;
+      background-color: #111;
       text-align: center;
-      padding: 25px;
-      margin-top: 60px;
-      border-top: 2px solid #b30000;
+      padding: 30px;
+      color: #ff4d4d;
+      border-top: 2px solid red;
     }
 
     footer a {
       color: #ff4d4d;
-      text-decoration: none;
       margin: 0 10px;
+      text-decoration: none;
+      transition: 0.3s;
     }
 
     footer a:hover {
       color: white;
+    }
+
+    /* BOTÃO WHATSAPP */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      background-color: #25d366;
+      color: white;
+      border-radius: 50%;
+      width: 65px;
+      height: 65px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 35px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.3);
+      text-decoration: none;
+      transition: 0.3s ease;
+      z-index: 10000;
+      animation: fadeIn 2s ease;
+    }
+
+    .whatsapp-float:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 25px rgba(37,211,102,0.6);
+    }
+
+    /* ANIMAÇÕES */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
     }
   </style>
 </head>
@@ -143,66 +204,69 @@
 
   <nav>
     <a href="#inicio">Início</a>
-    <a href="#categorias">Categorias</a>
     <a href="#produtos">Produtos</a>
-    <a href="#sobre">Sobre Nós</a>
+    <a href="#sobre">Sobre</a>
     <a href="#contato">Contato</a>
   </nav>
 
   <section class="banner" id="inicio">
-    <h2>DL Store — Estilo e Inovação</h2>
-    <p>O melhor da moda e tecnologia em um só lugar</p>
+    <h2>DL Store</h2>
+    <p>O futuro da tecnologia e estilo começa aqui.</p>
   </section>
 
-  <section class="categories" id="categorias">
-    <h2>Categorias em Destaque</h2>
-    <div class="category-list">
-      <div class="category">
-        <img src="https://via.placeholder.com/250x150" alt="Eletrônicos">
-        <h3>Eletrônicos</h3>
-      </div>
-      <div class="category">
-        <img src="https://via.placeholder.com/250x150" alt="Roupas">
-        <h3>Roupas</h3>
-      </div>
-      <div class="category">
-        <img src="https://via.placeholder.com/250x150" alt="Acessórios">
-        <h3>Acessórios</h3>
-      </div>
-    </div>
-  </section>
-
-  <section class="products" id="produtos">
+  <section class="section" id="produtos">
     <h2>Produtos em Destaque</h2>
-    <div class="product-list">
-      <div class="product">
-        <img src="https://via.placeholder.com/250x150" alt="Fone Bluetooth">
+    <div class="cards">
+      <div class="card">
+        <img src="https://via.placeholder.com/250x150" alt="Produto">
         <h3>Fone Bluetooth</h3>
-        <p>R$ 79,90</p>
-        <button>Adicionar ao carrinho</button>
+        <p>Som potente e bateria duradoura.</p>
       </div>
-      <div class="product">
-        <img src="https://via.placeholder.com/250x150" alt="Camiseta Premium">
-        <h3>Camiseta Premium</h3>
-        <p>R$ 49,90</p>
-        <button>Adicionar ao carrinho</button>
-      </div>
-      <div class="product">
-        <img src="https://via.placeholder.com/250x150" alt="Relógio Digital">
+      <div class="card">
+        <img src="https://via.placeholder.com/250x150" alt="Produto">
         <h3>Relógio Digital</h3>
-        <p>R$ 99,90</p>
-        <button>Adicionar ao carrinho</button>
+        <p>Estilo e tecnologia no seu pulso.</p>
+      </div>
+      <div class="card">
+        <img src="https://via.placeholder.com/250x150" alt="Produto">
+        <h3>Camiseta Premium</h3>
+        <p>Conforto e qualidade em cada detalhe.</p>
       </div>
     </div>
+  </section>
+
+  <section class="section" id="sobre">
+    <h2>Sobre Nós</h2>
+    <p>A <strong>DL Store</strong> nasceu com a missão de unir tecnologia, moda e inovação em um só lugar. Aqui, cada produto reflete qualidade e estilo para quem busca o melhor.</p>
+  </section>
+
+  <section class="section" id="contato">
+    <h2>Contato</h2>
+    <p>Fale com a gente diretamente no WhatsApp!</p>
+    <p><a href="https://wa.me/5574999489067" style="color:#25d366;">👉 Clique aqui para conversar</a></p>
   </section>
 
   <footer>
-    <p>© 2025 DL Store — Todos os direitos reservados</p>
-    <p>
-      <a href="#">WhatsApp</a> |
-      <a href="#">Instagram</a> |
-      <a href="#">Política de Privacidade</a>
-    </p>
+    <p>© 2025 DL Store — Inovação, Estilo e Tecnologia</p>
   </footer>
+
+  <!-- BOTÃO FLUTUANTE DO WHATSAPP -->
+  <a href="https://wa.me/5574999489067" class="whatsapp-float" target="_blank" title="Fale conosco no WhatsApp">
+    💬
+  </a>
+
+  <script>
+    // Animação de aparição ao rolar
+    const sections = document.querySelectorAll('.section');
+    const showOnScroll = () => {
+      const trigger = window.innerHeight / 1.2;
+      sections.forEach(sec => {
+        const top = sec.getBoundingClientRect().top;
+        if (top < trigger) sec.classList.add('visible');
+      });
+    };
+    window.addEventListener('scroll', showOnScroll);
+    showOnScroll();
+  </script>
 </body>
 </html>
