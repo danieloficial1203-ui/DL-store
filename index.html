@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>DL Store — Inovação e Estilo</title>
   <style>
     * {
@@ -13,251 +13,222 @@
     }
 
     body {
-      background-color: #000;
+      background-color: #111;
       color: #fff;
-      scroll-behavior: smooth;
     }
 
     header {
-      background: linear-gradient(to right, #c00, #900);
+      background: linear-gradient(90deg, #d60000, #000);
       display: flex;
       align-items: center;
       justify-content: space-between;
       padding: 15px 40px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.5);
       position: sticky;
       top: 0;
-      z-index: 100;
+      z-index: 1000;
     }
 
     .logo {
-      width: 70px;
-      height: 70px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo img {
+      width: 60px;
+      height: 60px;
       border-radius: 50%;
       object-fit: cover;
-      box-shadow: 0 0 10px red;
+    }
+
+    .logo h1 {
+      font-size: 1.5rem;
+      font-weight: bold;
     }
 
     nav ul {
-      display: flex;
       list-style: none;
+      display: flex;
       gap: 25px;
     }
 
-    nav ul li a {
+    nav a {
       text-decoration: none;
-      color: white;
-      font-weight: 600;
+      color: #fff;
+      font-weight: 500;
       transition: 0.3s;
     }
 
-    nav ul li a:hover {
-      color: #ff0000;
-    }
-
-    section {
-      padding: 50px 40px;
-      text-align: center;
+    nav a:hover {
+      color: #d60000;
     }
 
     .produtos {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       gap: 20px;
-      justify-items: center;
+      padding: 40px;
     }
 
     .produto {
-      background-color: #111;
+      background: #1a1a1a;
       border-radius: 15px;
-      padding: 20px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+      overflow: hidden;
       text-align: center;
-      box-shadow: 0 0 10px #400;
-      transition: transform 0.3s;
+      transition: 0.3s;
     }
 
     .produto:hover {
-      transform: scale(1.05);
+      transform: translateY(-5px);
     }
 
     .produto img {
       width: 100%;
       height: 180px;
       object-fit: cover;
-      border-radius: 10px;
     }
 
     .produto h3 {
-      margin-top: 10px;
-      color: #ff0000;
+      margin: 10px 0;
     }
 
     .produto p {
-      margin: 5px 0;
-      color: #ccc;
+      color: #bbb;
     }
 
-    .produto button {
-      background-color: #ff0000;
-      border: none;
-      padding: 10px 20px;
-      border-radius: 25px;
-      color: #fff;
-      cursor: pointer;
+    .preco {
+      color: #ff1a1a;
+      font-size: 1.2rem;
       font-weight: bold;
+      margin: 10px 0;
+    }
+
+    .botao-comprar {
+      display: inline-block;
+      margin: 10px 0 20px;
+      padding: 10px 20px;
+      background-color: #d60000;
+      color: #fff;
+      border: none;
+      border-radius: 20px;
+      cursor: pointer;
       transition: 0.3s;
     }
 
-    .produto button:hover {
-      background-color: #900;
+    .botao-comprar:hover {
+      background-color: #ff0000;
     }
 
     footer {
+      background-color: #000;
+      color: #aaa;
       text-align: center;
-      padding: 20px;
-      background-color: #111;
-      color: #888;
+      padding: 20px 0;
+      font-size: 0.9rem;
+      margin-top: 40px;
     }
 
-    .whatsapp {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background-color: #25d366;
-      color: white;
-      padding: 15px;
-      border-radius: 50%;
-      font-size: 24px;
+    .paginas {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-top: 30px;
+    }
+
+    .paginas a {
+      color: #d60000;
+      border: 1px solid #d60000;
+      padding: 8px 15px;
+      border-radius: 25px;
       text-decoration: none;
-      box-shadow: 0 0 10px #000;
       transition: 0.3s;
     }
 
-    .whatsapp:hover {
-      transform: scale(1.1);
-    }
-
-    h2 {
-      color: #ff0000;
-      margin-bottom: 30px;
+    .paginas a:hover {
+      background-color: #d60000;
+      color: #fff;
     }
   </style>
 </head>
 <body>
   <header>
-    <img src="logo-dlstore.jpg.jpg" alt="DL Store Logo" class="logo">
+    <div class="logo">
+      <img src="logo-dlstore.jpg.jpg" alt="DL Store Logo" />
+      <h1>DL Store</h1>
+    </div>
     <nav>
       <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#ofertas">Ofertas</a></li>
-        <li><a href="#roupas">Roupas</a></li>
-        <li><a href="#acessorios">Acessórios</a></li>
-        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Ofertas</a></li>
+        <li><a href="#">Roupas</a></li>
+        <li><a href="#">Eletrônicos</a></li>
+        <li><a href="#">Acessórios</a></li>
+        <li><a href="#">Mais vendidos</a></li>
+        <li><a href="#">Sobre</a></li>
       </ul>
     </nav>
   </header>
 
-  <!-- HOME -->
-  <section id="home">
-    <h2>Produtos em Destaque</h2>
-    <div class="produtos">
+  <main>
+    <section class="produtos">
       <div class="produto">
-        <img src="https://via.placeholder.com/300x200" alt="Produto 1">
-        <h3>Camisa DL Premium</h3>
-        <p>R$ 99,90</p>
-        <button>Comprar</button>
+        <img src="https://via.placeholder.com/300x180" alt="Produto 1">
+        <h3>Camiseta DL Tech</h3>
+        <p>Estilo e conforto</p>
+        <p class="preco">R$ 79,90</p>
+        <button class="botao-comprar">Comprar</button>
       </div>
       <div class="produto">
-        <img src="https://via.placeholder.com/300x200" alt="Produto 2">
-        <h3>Tênis DL Esportivo</h3>
-        <p>R$ 229,90</p>
-        <button>Comprar</button>
-      </div>
-      <div class="produto">
-        <img src="https://via.placeholder.com/300x200" alt="Produto 3">
-        <h3>Fone DL Bass</h3>
-        <p>R$ 149,90</p>
-        <button>Comprar</button>
-      </div>
-      <div class="produto">
-        <img src="https://via.placeholder.com/300x200" alt="Produto 4">
-        <h3>Relógio DL Style</h3>
-        <p>R$ 189,90</p>
-        <button>Comprar</button>
-      </div>
-    </div>
-  </section>
-
-  <!-- OFERTAS -->
-  <section id="ofertas">
-    <h2>Ofertas Especiais 🔥</h2>
-    <div class="produtos">
-      <div class="produto">
-        <img src="https://via.placeholder.com/300x200" alt="Promoção">
-        <h3>Camisa DL Casual</h3>
-        <p><del>R$ 89,90</del> R$ 69,90</p>
-        <button>Comprar</button>
-      </div>
-      <div class="produto">
-        <img src="https://via.placeholder.com/300x200" alt="Promoção 2">
-        <h3>Relógio DL Digital</h3>
-        <p><del>R$ 159,90</del> R$ 119,90</p>
-        <button>Comprar</button>
-      </div>
-    </div>
-  </section>
-
-  <!-- ROUPAS -->
-  <section id="roupas">
-    <h2>Roupas DL</h2>
-    <div class="produtos">
-      <div class="produto">
-        <img src="https://via.placeholder.com/300x200" alt="Camisa">
-        <h3>Camisa Street DL</h3>
-        <p>R$ 89,90</p>
-        <button>Comprar</button>
-      </div>
-      <div class="produto">
-        <img src="https://via.placeholder.com/300x200" alt="Jaqueta">
-        <h3>Jaqueta DL Classic</h3>
-        <p>R$ 199,90</p>
-        <button>Comprar</button>
-      </div>
-    </div>
-  </section>
-
-  <!-- ACESSÓRIOS -->
-  <section id="acessorios">
-    <h2>Acessórios DL</h2>
-    <div class="produtos">
-      <div class="produto">
-        <img src="https://via.placeholder.com/300x200" alt="Fone">
+        <img src="https://via.placeholder.com/300x180" alt="Produto 2">
         <h3>Fone DL Pro</h3>
-        <p>R$ 159,90</p>
-        <button>Comprar</button>
+        <p>Som potente</p>
+        <p class="preco">R$ 149,90</p>
+        <button class="botao-comprar">Comprar</button>
       </div>
       <div class="produto">
-        <img src="https://via.placeholder.com/300x200" alt="Relógio">
-        <h3>Relógio DL Sport</h3>
-        <p>R$ 179,90</p>
-        <button>Comprar</button>
+        <img src="https://via.placeholder.com/300x180" alt="Produto 3">
+        <h3>Smartwatch DL Fit</h3>
+        <p>Controle sua rotina</p>
+        <p class="preco">R$ 299,90</p>
+        <button class="botao-comprar">Comprar</button>
       </div>
+      <div class="produto">
+        <img src="https://via.placeholder.com/300x180" alt="Produto 4">
+        <h3>Tênis DL Run</h3>
+        <p>Leve e moderno</p>
+        <p class="preco">R$ 199,90</p>
+        <button class="botao-comprar">Comprar</button>
+      </div>
+      <div class="produto">
+        <img src="https://via.placeholder.com/300x180" alt="Produto 5">
+        <h3>Relógio DL Lux</h3>
+        <p>Estilo premium</p>
+        <p class="preco">R$ 499,90</p>
+        <button class="botao-comprar">Comprar</button>
+      </div>
+      <div class="produto">
+        <img src="https://via.placeholder.com/300x180" alt="Produto 6">
+        <h3>Mochila DL</h3>
+        <p>Durável e elegante</p>
+        <p class="preco">R$ 129,90</p>
+        <button class="botao-comprar">Comprar</button>
+      </div>
+    </section>
+
+    <div class="paginas">
+      <a href="#">1</a>
+      <a href="#">2</a>
+      <a href="#">3</a>
+      <a href="#">4</a>
+      <a href="#">5</a>
     </div>
-  </section>
-
-  <!-- SOBRE -->
-  <section id="sobre">
-    <h2>Sobre a DL Store</h2>
-    <p style="max-width: 700px; margin: 0 auto; color: #ccc; line-height: 1.6;">
-      A <strong>DL Store</strong> é uma loja moderna focada em inovação e estilo.
-      Nosso objetivo é oferecer produtos de qualidade, com um visual marcante e tecnologia de ponta.
-      Trabalhamos todos os dias para trazer o melhor da moda e tecnologia até você.
-    </p>
-  </section>
-
-  <a class="whatsapp" href="https://wa.me/5574999489067" target="_blank">💬</a>
+  </main>
 
   <footer>
-    <p>© 2025 DL Store — Todos os direitos reservados</p>
+    <p>© 2025 DL Store — Inovação e Estilo. Todos os direitos reservados.</p>
   </footer>
 </body>
 </html>
