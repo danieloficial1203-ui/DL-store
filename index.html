@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>DL Store — Inovação e Estilo</title>
   <style>
     * {
@@ -15,102 +15,99 @@
     body {
       background-color: #000;
       color: #fff;
-      overflow-x: hidden;
     }
 
     header {
-      background: linear-gradient(90deg, #ff0000, #1a0000);
+      background: linear-gradient(to right, #c00, #900);
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 10px 30px;
-      position: fixed;
-      width: 100%;
-      top: 0;
-      z-index: 1000;
-      box-shadow: 0 4px 10px rgba(255, 0, 0, 0.3);
+      padding: 15px 40px;
     }
 
-    header img {
-      height: 50px;
+    .logo {
+      width: 70px;
+      height: 70px;
       border-radius: 50%;
+      object-fit: cover;
       box-shadow: 0 0 10px red;
     }
 
-    nav a {
-      color: white;
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 25px;
+    }
+
+    nav ul li a {
       text-decoration: none;
-      margin: 0 15px;
-      font-weight: bold;
+      color: white;
+      font-weight: 600;
       transition: 0.3s;
     }
 
-    nav a:hover {
-      color: red;
+    nav ul li a:hover {
+      color: #ff0000;
     }
 
-    .container {
-      margin-top: 100px;
-      padding: 20px;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
+    .produtos {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 20px;
+      padding: 40px;
+      justify-items: center;
     }
 
-    .card {
+    .produto {
       background-color: #111;
-      border: 1px solid red;
-      border-radius: 20px;
-      width: 250px;
-      text-align: center;
+      border-radius: 15px;
       padding: 20px;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      text-align: center;
+      box-shadow: 0 0 10px #400;
+      transition: transform 0.3s;
     }
 
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 0 15px red;
+    .produto:hover {
+      transform: scale(1.05);
     }
 
-    .card img {
+    .produto img {
       width: 100%;
-      height: 200px;
+      height: 180px;
       object-fit: cover;
       border-radius: 10px;
     }
 
-    .card h3 {
-      color: #ff3333;
+    .produto h3 {
       margin-top: 10px;
+      color: #ff0000;
     }
 
-    .card p {
+    .produto p {
+      margin: 5px 0;
       color: #ccc;
-      margin: 10px 0;
     }
 
-    .btn {
-      background-color: red;
-      color: white;
+    .produto button {
+      background-color: #ff0000;
       border: none;
       padding: 10px 20px;
-      border-radius: 20px;
+      border-radius: 25px;
+      color: #fff;
       cursor: pointer;
       font-weight: bold;
       transition: 0.3s;
     }
 
-    .btn:hover {
-      background-color: #ff4444;
+    .produto button:hover {
+      background-color: #900;
     }
 
     footer {
       text-align: center;
       padding: 20px;
-      margin-top: 50px;
-      background-color: #0d0d0d;
-      border-top: 1px solid red;
+      background-color: #111;
+      color: #888;
     }
 
     .whatsapp {
@@ -118,70 +115,63 @@
       bottom: 20px;
       right: 20px;
       background-color: #25d366;
-      border-radius: 50%;
+      color: white;
       padding: 15px;
+      border-radius: 50%;
+      font-size: 24px;
+      text-decoration: none;
       box-shadow: 0 0 10px #000;
-      transition: transform 0.3s ease;
-    }
-
-    .whatsapp:hover {
-      transform: scale(1.1);
-    }
-
-    .whatsapp img {
-      width: 40px;
-      height: 40px;
     }
   </style>
 </head>
 <body>
   <header>
-    <img src="logo-dlstore.jpg.jpg" alt="DL Store Logo">
+    <img src="logo-dlstore.jpg.jpg" alt="DL Store Logo" class="logo">
     <nav>
-      <a href="#">Home</a>
-      <a href="#">Ofertas</a>
-      <a href="#">Roupas</a>
-      <a href="#">Acessórios</a>
-      <a href="#">Sobre</a>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Ofertas</a></li>
+        <li><a href="#">Roupas</a></li>
+        <li><a href="#">Acessórios</a></li>
+        <li><a href="#">Sobre</a></li>
+      </ul>
     </nav>
   </header>
 
-  <div class="container">
-    <div class="card">
-      <img src="https://via.placeholder.com/250x200" alt="Camisa DL Premium">
+  <section class="produtos">
+    <div class="produto">
+      <img src="https://via.placeholder.com/300x200" alt="Produto 1">
       <h3>Camisa DL Premium</h3>
       <p>R$ 99,90</p>
-      <button class="btn">Comprar</button>
+      <button>Comprar</button>
     </div>
 
-    <div class="card">
-      <img src="https://via.placeholder.com/250x200" alt="Tênis DL Esportivo">
+    <div class="produto">
+      <img src="https://via.placeholder.com/300x200" alt="Produto 2">
       <h3>Tênis DL Esportivo</h3>
       <p>R$ 229,90</p>
-      <button class="btn">Comprar</button>
+      <button>Comprar</button>
     </div>
 
-    <div class="card">
-      <img src="https://via.placeholder.com/250x200" alt="Fone DL Bass">
+    <div class="produto">
+      <img src="https://via.placeholder.com/300x200" alt="Produto 3">
       <h3>Fone DL Bass</h3>
       <p>R$ 149,90</p>
-      <button class="btn">Comprar</button>
+      <button>Comprar</button>
     </div>
 
-    <div class="card">
-      <img src="https://via.placeholder.com/250x200" alt="Relógio DL Style">
+    <div class="produto">
+      <img src="https://via.placeholder.com/300x200" alt="Produto 4">
       <h3>Relógio DL Style</h3>
       <p>R$ 189,90</p>
-      <button class="btn">Comprar</button>
+      <button>Comprar</button>
     </div>
-  </div>
+  </section>
+
+  <a class="whatsapp" href="https://wa.me/5574999489067" target="_blank">💬</a>
 
   <footer>
     <p>© 2025 DL Store — Todos os direitos reservados</p>
   </footer>
-
-  <a href="https://wa.me/5574999489067" class="whatsapp" target="_blank">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
-  </a>
 </body>
 </html>
