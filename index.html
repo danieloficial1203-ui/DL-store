@@ -15,6 +15,7 @@
     body {
       background-color: #000;
       color: #fff;
+      scroll-behavior: smooth;
     }
 
     header {
@@ -23,6 +24,9 @@
       align-items: center;
       justify-content: space-between;
       padding: 15px 40px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
     }
 
     .logo {
@@ -50,11 +54,15 @@
       color: #ff0000;
     }
 
+    section {
+      padding: 50px 40px;
+      text-align: center;
+    }
+
     .produtos {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 20px;
-      padding: 40px;
       justify-items: center;
     }
 
@@ -121,6 +129,16 @@
       font-size: 24px;
       text-decoration: none;
       box-shadow: 0 0 10px #000;
+      transition: 0.3s;
+    }
+
+    .whatsapp:hover {
+      transform: scale(1.1);
+    }
+
+    h2 {
+      color: #ff0000;
+      margin-bottom: 30px;
     }
   </style>
 </head>
@@ -129,43 +147,111 @@
     <img src="logo-dlstore.jpg.jpg" alt="DL Store Logo" class="logo">
     <nav>
       <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Ofertas</a></li>
-        <li><a href="#">Roupas</a></li>
-        <li><a href="#">Acessórios</a></li>
-        <li><a href="#">Sobre</a></li>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#ofertas">Ofertas</a></li>
+        <li><a href="#roupas">Roupas</a></li>
+        <li><a href="#acessorios">Acessórios</a></li>
+        <li><a href="#sobre">Sobre</a></li>
       </ul>
     </nav>
   </header>
 
-  <section class="produtos">
-    <div class="produto">
-      <img src="https://via.placeholder.com/300x200" alt="Produto 1">
-      <h3>Camisa DL Premium</h3>
-      <p>R$ 99,90</p>
-      <button>Comprar</button>
+  <!-- HOME -->
+  <section id="home">
+    <h2>Produtos em Destaque</h2>
+    <div class="produtos">
+      <div class="produto">
+        <img src="https://via.placeholder.com/300x200" alt="Produto 1">
+        <h3>Camisa DL Premium</h3>
+        <p>R$ 99,90</p>
+        <button>Comprar</button>
+      </div>
+      <div class="produto">
+        <img src="https://via.placeholder.com/300x200" alt="Produto 2">
+        <h3>Tênis DL Esportivo</h3>
+        <p>R$ 229,90</p>
+        <button>Comprar</button>
+      </div>
+      <div class="produto">
+        <img src="https://via.placeholder.com/300x200" alt="Produto 3">
+        <h3>Fone DL Bass</h3>
+        <p>R$ 149,90</p>
+        <button>Comprar</button>
+      </div>
+      <div class="produto">
+        <img src="https://via.placeholder.com/300x200" alt="Produto 4">
+        <h3>Relógio DL Style</h3>
+        <p>R$ 189,90</p>
+        <button>Comprar</button>
+      </div>
     </div>
+  </section>
 
-    <div class="produto">
-      <img src="https://via.placeholder.com/300x200" alt="Produto 2">
-      <h3>Tênis DL Esportivo</h3>
-      <p>R$ 229,90</p>
-      <button>Comprar</button>
+  <!-- OFERTAS -->
+  <section id="ofertas">
+    <h2>Ofertas Especiais 🔥</h2>
+    <div class="produtos">
+      <div class="produto">
+        <img src="https://via.placeholder.com/300x200" alt="Promoção">
+        <h3>Camisa DL Casual</h3>
+        <p><del>R$ 89,90</del> R$ 69,90</p>
+        <button>Comprar</button>
+      </div>
+      <div class="produto">
+        <img src="https://via.placeholder.com/300x200" alt="Promoção 2">
+        <h3>Relógio DL Digital</h3>
+        <p><del>R$ 159,90</del> R$ 119,90</p>
+        <button>Comprar</button>
+      </div>
     </div>
+  </section>
 
-    <div class="produto">
-      <img src="https://via.placeholder.com/300x200" alt="Produto 3">
-      <h3>Fone DL Bass</h3>
-      <p>R$ 149,90</p>
-      <button>Comprar</button>
+  <!-- ROUPAS -->
+  <section id="roupas">
+    <h2>Roupas DL</h2>
+    <div class="produtos">
+      <div class="produto">
+        <img src="https://via.placeholder.com/300x200" alt="Camisa">
+        <h3>Camisa Street DL</h3>
+        <p>R$ 89,90</p>
+        <button>Comprar</button>
+      </div>
+      <div class="produto">
+        <img src="https://via.placeholder.com/300x200" alt="Jaqueta">
+        <h3>Jaqueta DL Classic</h3>
+        <p>R$ 199,90</p>
+        <button>Comprar</button>
+      </div>
     </div>
+  </section>
 
-    <div class="produto">
-      <img src="https://via.placeholder.com/300x200" alt="Produto 4">
-      <h3>Relógio DL Style</h3>
-      <p>R$ 189,90</p>
-      <button>Comprar</button>
+  <!-- ACESSÓRIOS -->
+  <section id="acessorios">
+    <h2>Acessórios DL</h2>
+    <div class="produtos">
+      <div class="produto">
+        <img src="https://via.placeholder.com/300x200" alt="Fone">
+        <h3>Fone DL Pro</h3>
+        <p>R$ 159,90</p>
+        <button>Comprar</button>
+      </div>
+      <div class="produto">
+        <img src="https://via.placeholder.com/300x200" alt="Relógio">
+        <h3>Relógio DL Sport</h3>
+        <p>R$ 179,90</p>
+        <button>Comprar</button>
+      </div>
     </div>
+  </section>
+
+  <!-- SOBRE -->
+  <section id="sobre">
+    <h2>Sobre a DL Store</h2>
+    <p style="max-width: 700px; margin: 0 auto; color: #ccc; line-height: 1.6;">
+      A <strong>DL Store</strong> é uma loja moderna focada em inovação e estilo.
+      Nosso objetivo é oferecer produtos de qualidade, com um visual marcante e tecnologia de ponta.
+      Trabalhamos todos os dias para trazer o melhor da moda e tecnologia até você.
+    </p>
   </section>
 
   <a class="whatsapp" href="https://wa.me/5574999489067" target="_blank">💬</a>
