@@ -16,6 +16,7 @@
       background-color: #0a0a0a;
       color: #fff;
       overflow-x: hidden;
+      scroll-behavior: smooth;
     }
 
     header {
@@ -23,65 +24,57 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
+      flex-wrap: wrap;
       padding: 15px 30px;
       box-shadow: 0 2px 10px rgba(255, 0, 0, 0.3);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
 
     header img {
-      height: 50px;
-      border-radius: 10px;
-    }
-
-    .search-bar {
-      display: flex;
-      align-items: center;
-      background: #1a1a1a;
-      border-radius: 25px;
-      padding: 5px 15px;
-      width: 50%;
-    }
-
-    .search-bar input {
-      flex: 1;
-      background: none;
-      border: none;
-      outline: none;
-      color: #fff;
-      padding: 10px;
-    }
-
-    .search-bar button {
-      background: #ff0000;
-      border: none;
-      border-radius: 20px;
-      color: white;
-      padding: 8px 15px;
-      cursor: pointer;
-      transition: 0.3s;
-    }
-
-    .search-bar button:hover {
-      background: #cc0000;
+      height: 60px;
+      border-radius: 50%;
+      box-shadow: 0 0 10px rgba(255, 0, 0, 0.6);
     }
 
     nav {
-      background: #111;
       display: flex;
-      justify-content: center;
-      padding: 10px 0;
-      gap: 20px;
+      gap: 25px;
       flex-wrap: wrap;
     }
 
     nav a {
-      color: #ff0000;
+      color: #fff;
       text-decoration: none;
       font-weight: 600;
       transition: 0.3s;
     }
 
     nav a:hover {
+      color: #ff0000;
+    }
+
+    section {
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .banner {
+      background: url('https://via.placeholder.com/1600x400/000000/ff0000?text=DL+Store') center/cover;
+      height: 300px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
       color: white;
+    }
+
+    .banner h1 {
+      font-size: 2.5rem;
+      background: rgba(0, 0, 0, 0.6);
+      padding: 10px 25px;
+      border-radius: 10px;
     }
 
     .products {
@@ -119,21 +112,6 @@
       color: #ccc;
     }
 
-    .product button {
-      margin-top: 10px;
-      background: #ff0000;
-      border: none;
-      padding: 10px 15px;
-      color: #fff;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: 0.3s;
-    }
-
-    .product button:hover {
-      background: #cc0000;
-    }
-
     footer {
       text-align: center;
       padding: 20px;
@@ -161,66 +139,101 @@
       transform: scale(1.1);
     }
 
-    @media (max-width: 768px) {
-      .search-bar {
-        width: 100%;
-        margin-top: 10px;
-      }
+    form {
+      max-width: 400px;
+      margin: 20px auto;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
 
+    form input,
+    form textarea {
+      padding: 10px;
+      border-radius: 8px;
+      border: none;
+      outline: none;
+    }
+
+    form button {
+      padding: 10px;
+      border: none;
+      background: #ff0000;
+      color: white;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    form button:hover {
+      background: #cc0000;
+    }
+
+    @media (max-width: 768px) {
       header {
         flex-direction: column;
+        text-align: center;
+      }
+
+      nav {
+        justify-content: center;
+      }
+
+      .banner {
+        height: 200px;
+      }
+
+      .banner h1 {
+        font-size: 1.5rem;
       }
     }
   </style>
 </head>
 <body>
   <header>
-    <img src="logo-dlstore.jpg" alt="DL Store Logo" />
-    <div class="search-bar">
-      <input type="text" placeholder="Buscar produtos..." />
-      <button>Buscar</button>
-    </div>
+    <img src="logo-dlstore.jpg.jpg" alt="DL Store Logo" />
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#produtos">Produtos</a>
+      <a href="#sobre">Sobre</a>
+      <a href="#contato">Contato</a>
+    </nav>
   </header>
 
-  <nav>
-    <a href="#">Ofertas</a>
-    <a href="#">Eletrônicos</a>
-    <a href="#">Roupas</a>
-    <a href="#">Acessórios</a>
-    <a href="#">Mais vendidos</a>
-  </nav>
+  <section id="home" class="banner">
+    <h1>Bem-vindo à DL Store — Inovação e Estilo</h1>
+  </section>
 
-  <section class="products">
-    <div class="product">
-      <img src="https://via.placeholder.com/200x150" alt="Produto 1" />
-      <h3>Camisa DL Premium</h3>
-      <p>R$ 99,90</p>
-      <button>Comprar</button>
-    </div>
-    <div class="product">
-      <img src="https://via.placeholder.com/200x150" alt="Produto 2" />
-      <h3>Tênis DL Esportivo</h3>
-      <p>R$ 229,90</p>
-      <button>Comprar</button>
-    </div>
-    <div class="product">
-      <img src="https://via.placeholder.com/200x150" alt="Produto 3" />
-      <h3>Fone DL Bass</h3>
-      <p>R$ 149,90</p>
-      <button>Comprar</button>
-    </div>
-    <div class="product">
-      <img src="https://via.placeholder.com/200x150" alt="Produto 4" />
-      <h3>Relógio DL Style</h3>
-      <p>R$ 189,90</p>
-      <button>Comprar</button>
+  <section id="produtos">
+    <h2>Produtos</h2>
+    <p>Em breve você poderá adicionar seus produtos aqui.</p>
+    <div class="products">
+      <!-- adicione seus produtos aqui depois -->
     </div>
   </section>
 
-  <a href="https://wa.me/5574999489067" class="whatsapp-btn">💬</a>
+  <section id="sobre">
+    <h2>Sobre Nós</h2>
+    <p>A DL Store é uma loja moderna que une inovação, estilo e tecnologia para trazer os melhores produtos até você.</p>
+    <p>Nosso compromisso é com a qualidade, confiança e o atendimento rápido.</p>
+  </section>
+
+  <section id="contato">
+    <h2>Entre em Contato</h2>
+    <p>Fale conosco pelo WhatsApp ou envie uma mensagem abaixo.</p>
+
+    <form>
+      <input type="text" placeholder="Seu nome" required />
+      <input type="email" placeholder="Seu e-mail" required />
+      <textarea placeholder="Sua mensagem" rows="4" required></textarea>
+      <button type="submit">Enviar</button>
+    </form>
+  </section>
 
   <footer>
     <p>© 2025 DL Store — Todos os direitos reservados</p>
   </footer>
+
+  <a href="https://wa.me/5574999489067" class="whatsapp-btn">💬</a>
 </body>
 </html>
