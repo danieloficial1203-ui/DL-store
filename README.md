@@ -1,7 +1,3 @@
-# 🛍 DL Store
-
-Bem-vindo à *DL Store*, uma loja online criada por Daniel Souza.  
-Aqui você encontra produtos incríveis e novidades atualizadas frequentemente.
 
 🌐 *Acesse o site:* [https://danieloficial1203-ui.github.io/DL-store/](https://danieloficial1203-ui.github.io/DL-store/)
 
